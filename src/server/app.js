@@ -1,3 +1,4 @@
+require('dotenv').config();
 // *** main dependencies *** //
 var express = require('express');
 var path = require('path');
@@ -10,7 +11,7 @@ var bcrypt = require('bcrypt');
 
 
 // *** routes *** //
-var routes = require('./routes/index.js');
+var foodLocalApi = require('./routes/foodLocalApi.js');
 
 
 // *** express instance *** //
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.get('/', function(req,res,next) {
     res.sendFile(path.join(__dirname, '../client/app', 'index.html'));
 });
-app.use('/', routes);
+app.use('/api/food', foodLocalApi);
 
 
 // catch 404 and forward to error handler
