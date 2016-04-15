@@ -12,6 +12,7 @@ var bcrypt = require('bcrypt');
 
 // *** routes *** //
 var foodLocalApi = require('./routes/foodLocalApi.js');
+var userApi = require('./routes/userApi.js');
 
 
 // *** express instance *** //
@@ -30,6 +31,7 @@ app.get('/', function(req,res,next) {
     res.sendFile(path.join(__dirname, '../client/app', 'index.html'));
 });
 app.use('/api/food', foodLocalApi);
+app.use('/api/user', userApi);
 
 
 // catch 404 and forward to error handler

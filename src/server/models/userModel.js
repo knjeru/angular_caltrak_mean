@@ -33,13 +33,13 @@ var userSchema = mongoose.Schema({
       weight: Number
     }
   ],
-  calories: [
+  food: [
     {
       timestamp: {
         type: Date,
         default: Date.now()
       },
-      food: {
+      name: {
         type: String,
         required: true
       },
